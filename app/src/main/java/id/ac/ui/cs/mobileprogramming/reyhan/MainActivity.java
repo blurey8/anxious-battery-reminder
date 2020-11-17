@@ -1,10 +1,13 @@
 package id.ac.ui.cs.mobileprogramming.reyhan;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import id.ac.ui.cs.mobileprogramming.reyhan.service.BatteryDropReminderService;
 import id.ac.ui.cs.mobileprogramming.reyhan.ui.main.MainFragment;
@@ -24,5 +27,25 @@ public class MainActivity extends AppCompatActivity {
 
         Intent service = new Intent(getApplicationContext(), BatteryDropReminderService.class);
         getApplicationContext().startService(service);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.settings, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                Intent intent = new Intent(this, SettingsActivity.class);
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

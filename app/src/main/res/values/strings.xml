@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Anxious Battery Reminder</string>
+
+    <string-array name="mode_name">
+        <item>Relax Mode</item>
+        <item>Panic Mode</item>
+    </string-array>
+
+    <integer-array name="mode_range">
+        <item>25</item>
+        <item>1</item>
+    </integer-array>
 </resources>
