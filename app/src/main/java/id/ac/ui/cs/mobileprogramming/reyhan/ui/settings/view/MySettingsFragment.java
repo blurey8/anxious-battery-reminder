@@ -1,9 +1,15 @@
 package id.ac.ui.cs.mobileprogramming.reyhan.ui.settings.view;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.preference.ListPreference;
 import androidx.preference.PreferenceFragmentCompat;
 
@@ -14,31 +20,38 @@ import id.ac.ui.cs.mobileprogramming.reyhan.data.model.ReminderMode;
 import id.ac.ui.cs.mobileprogramming.reyhan.ui.settings.viewmodel.ReminderModeViewModel;
 
 public class MySettingsFragment extends PreferenceFragmentCompat {
+
+    private ReminderModeViewModel mReminderModeViewModel;
+
     public static Fragment newInstance() {
         return new MySettingsFragment();
     }
 
     @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        mReminderModeViewModel = ViewModelProviders.of(this).get(ReminderModeViewModel.class);
+
+        final ListPreference listPreference = findPreference("mode_preference");
+
+        mReminderModeViewModel.getAll().observe(getViewLifecycleOwner(), new Observer<List<ReminderMode>>() {
+            @Override
+            public void onChanged(@Nullable final List<ReminderMode> reminderModes) {
+                CharSequence[] modeNames = new CharSequence[reminderModes.size()];
+                CharSequence[] modeRanges = new CharSequence[reminderModes.size()];
+                for (int i = 0; i < reminderModes.size(); i++) {
+                    modeNames[i] = reminderModes.get(i).getName();
+                    modeRanges[i] = String.valueOf(reminderModes.get(i).getRange());
+                }
+
+                listPreference.setEntries(modeNames);
+                listPreference.setEntryValues(modeRanges);
+            }
+        });
+        return super.onCreateView(inflater, container, savedInstanceState);
+    }
+
+    @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.my_preferences, rootKey);
-        // Get the ViewModel.
-        ReminderModeViewModel model = new ViewModelProvider(this).get(ReminderModeViewModel.class);
-
-//        // Create the observer which updates the UI.
-//        final Observer<String> nameObserver = new Observer<String>() {
-//            @Override
-//            public void onChanged(@Nullable final String newName) {
-//                // Update the UI, in this case, a TextView.
-//                nameTextView.setText(newName);
-//            }
-//        };
-
-        // Observe the LiveData, passing in this activity as the LifecycleOwner and the observer.
-//        model.getCurrentName().observe(this, nameObserver);
-        List<ReminderMode> reminderModes = model.getAll().getValue();
-        final ListPreference listPreference = (ListPreference) findPreference("mode_preference");
-
-//        listPreference.setEntries();
-
     }
 }

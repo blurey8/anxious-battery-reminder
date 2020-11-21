@@ -25,15 +25,8 @@ public class ReminderModeViewModel extends AndroidViewModel {
         return mReminderModes;
     }
 
-    public LiveData<List<ReminderMode>> getAllModeName() {
-        return mReminderModes;
-    }
-
-    public LiveData<List<ReminderMode>> getAllModeRange() {
-        return mReminderModes;
-    }
-
     public void insert(ReminderMode reminderMode) {
         mRepository.insert(reminderMode);
     }
+
 }

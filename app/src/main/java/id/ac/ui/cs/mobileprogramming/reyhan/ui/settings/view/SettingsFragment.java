@@ -24,7 +24,7 @@ import id.ac.ui.cs.mobileprogramming.reyhan.ui.settings.viewmodel.ReminderModeVi
 
 public class SettingsFragment extends Fragment {
 
-    private ReminderModeViewModel mVeminderModeViewModel;
+    private ReminderModeViewModel mReminderModeViewModel;
 
     public static Fragment newInstance() {
         return new SettingsFragment();
@@ -38,7 +38,7 @@ public class SettingsFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.settings_fragment, container, false);
 
-        mVeminderModeViewModel = ViewModelProviders.of(this).get(ReminderModeViewModel.class);
+        mReminderModeViewModel = ViewModelProviders.of(this).get(ReminderModeViewModel.class);
 
         RecyclerView recyclerView = rootView.findViewById(R.id.reminder_mode_recyclerview);
         Context context = getContext();
@@ -49,7 +49,7 @@ public class SettingsFragment extends Fragment {
         recyclerView.setAdapter(adapter);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
-        mVeminderModeViewModel.getAll().observe(getViewLifecycleOwner(), new Observer<List<ReminderMode>>() {
+        mReminderModeViewModel.getAll().observe(getViewLifecycleOwner(), new Observer<List<ReminderMode>>() {
             @Override
             public void onChanged(@Nullable final List<ReminderMode> reminderModes) {
                 // Update the cached copy of the reminderModes in the adapter.
