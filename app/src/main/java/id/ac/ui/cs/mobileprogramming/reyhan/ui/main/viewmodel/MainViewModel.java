@@ -1,4 +1,4 @@
-package id.ac.ui.cs.mobileprogramming.reyhan.ui.main;
+package id.ac.ui.cs.mobileprogramming.reyhan.ui.main.viewmodel;
 
 import androidx.lifecycle.ViewModel;
 

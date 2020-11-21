@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="mode_range_text">Setiap %s%%</string>
+    <string name="airplane_mode">✈️ Mode Pesawat: %s</string>
+    <string name="battery_level">Daya Baterai: %s%%</string>
+    <string name="mode_name_text">Mode XXX</string>
+    <string name="reminder_mode">Mode Pengingat</string>
+    <string name="settings">Pengaturan</string>
+</resources>

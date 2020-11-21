@@ -43,7 +43,7 @@ public abstract class AppDatabase extends RoomDatabase {
                 Executors.newSingleThreadExecutor().execute(new Runnable() {
                     @Override
                     public void run() {
-                        getInstance(context).reminderModeDao().insertAll(ReminderMode.populateData());
+                        getInstance(context).reminderModeDao().insertAll(ReminderMode.getPopulatedData());
                     }
                 });
             }

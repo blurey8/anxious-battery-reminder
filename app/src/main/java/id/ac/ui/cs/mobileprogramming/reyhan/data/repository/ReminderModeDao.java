@@ -1,5 +1,6 @@
 package id.ac.ui.cs.mobileprogramming.reyhan.data.repository;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -28,5 +29,5 @@ public interface ReminderModeDao {
     ReminderMode getById(int id);
 
     @Query("SELECT * FROM REMINDER_MODE")
-    List<ReminderMode> getAll();
+    LiveData<List<ReminderMode>> getAll();
 }

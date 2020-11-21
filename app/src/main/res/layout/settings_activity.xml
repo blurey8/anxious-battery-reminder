@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/settings_container"
-    android:name="id.ac.ui.cs.mobileprogramming.reyhan.ui.settings.SettingsFragment"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" />
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/preference_container"
+        android:name="id.ac.ui.cs.mobileprogramming.reyhan.ui.settings.SettingsFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
+    <FrameLayout
+        android:id="@+id/settings_container"
+        android:name="id.ac.ui.cs.mobileprogramming.reyhan.ui.settings.SettingsFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
+</LinearLayout>

@@ -10,7 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import id.ac.ui.cs.mobileprogramming.reyhan.service.BatteryDropReminderService;
-import id.ac.ui.cs.mobileprogramming.reyhan.ui.main.MainFragment;
+import id.ac.ui.cs.mobileprogramming.reyhan.ui.main.view.MainFragment;
+import id.ac.ui.cs.mobileprogramming.reyhan.ui.settings.view.SettingsActivity;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -43,7 +43,7 @@ public class ReminderMode {
         this.range = range;
     }
 
-    public static ReminderMode[] populateData() {
+    public static ReminderMode[] getPopulatedData() {
         return new ReminderMode[]{
                 new ReminderMode("Relax Mode", 10),
                 new ReminderMode("Panic Mode", 1),
