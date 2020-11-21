@@ -49,7 +49,7 @@ public class SettingsFragment extends Fragment {
         recyclerView.setAdapter(adapter);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
-        mVeminderModeViewModel.getAll().observe(this, new Observer<List<ReminderMode>>() {
+        mVeminderModeViewModel.getAll().observe(getViewLifecycleOwner(), new Observer<List<ReminderMode>>() {
             @Override
             public void onChanged(@Nullable final List<ReminderMode> reminderModes) {
                 // Update the cached copy of the reminderModes in the adapter.

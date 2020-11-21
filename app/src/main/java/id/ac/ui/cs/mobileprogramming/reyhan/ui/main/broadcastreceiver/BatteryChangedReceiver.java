@@ -18,6 +18,7 @@ public class BatteryChangedReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         int level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, 0);
-        mBatteryLevelText.setText(String.format(context.getString(R.string.battery_level), String.valueOf(level)));
+        mBatteryLevelText.setText(
+                String.format(context.getString(R.string.battery_level), String.valueOf(level)));
     }
 }

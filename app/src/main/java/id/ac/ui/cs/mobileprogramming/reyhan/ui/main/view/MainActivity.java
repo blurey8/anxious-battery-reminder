@@ -1,4 +1,4 @@
-package id.ac.ui.cs.mobileprogramming.reyhan;
+package id.ac.ui.cs.mobileprogramming.reyhan.ui.main.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,8 +9,8 @@ import android.view.MenuItem;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import id.ac.ui.cs.mobileprogramming.reyhan.R;
 import id.ac.ui.cs.mobileprogramming.reyhan.service.BatteryDropReminderService;
-import id.ac.ui.cs.mobileprogramming.reyhan.ui.main.view.MainFragment;
 import id.ac.ui.cs.mobileprogramming.reyhan.ui.settings.view.SettingsActivity;
 
 public class MainActivity extends AppCompatActivity {
