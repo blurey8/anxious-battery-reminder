@@ -7,4 +7,8 @@
     <string name="mode_name_text">Mode XXX</string>
     <string name="reminder_mode">Mode Pengingat</string>
     <string name="settings">Pengaturan</string>
+    <string name="off">Mati</string>
+    <string name="on">Nyala</string>
+    <string name="reminder_mode_choice">Pilih Mode Pengingat</string>
+    <string name="reminder_mode_summary">Saat ini: %s</string>
 </resources>
