@@ -20,10 +20,6 @@ public class AirplaneModeChangedReceiver extends BroadcastReceiver {
         initStatus(context);
     }
 
-    public AirplaneModeChangedReceiver(TextView textView) {
-        mAirplaneModeText = textView;
-    }
-
     @Override
     public void onReceive(Context context, Intent intent) {
         isAirplaneMode = intent.getBooleanExtra("state", false);
