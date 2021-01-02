@@ -91,7 +91,7 @@ public class BatteryDropReminderService extends Service {
         // the NotificationChannel class is new and not in the support library
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             CharSequence name = "Battery Reminder"; //getString(R.string.channel_name);
-            String description = "Constantly remind user to charge everytime battery drops by 1%"; //getString(R.string.channel_description);
+            String description = "Constantly remind user to charge everytime battery drops by 1%";
             int importance = NotificationManager.IMPORTANCE_DEFAULT;
             NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
             channel.setDescription(description);

@@ -8,6 +8,7 @@ import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import id.ac.ui.cs.mobileprogramming.reyhan.R;
 import id.ac.ui.cs.mobileprogramming.reyhan.service.BatteryDropReminderService;
@@ -15,20 +16,25 @@ import id.ac.ui.cs.mobileprogramming.reyhan.ui.settings.view.SettingsActivity;
 
 public class MainActivity extends AppCompatActivity {
 
+    Fragment mMainFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
 
+        mMainFragment = MainFragment.newInstance();
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.container, MainFragment.newInstance())
+                    .replace(R.id.container, mMainFragment)
                     .commitNow();
         }
 
         Intent service = new Intent(getApplicationContext(), BatteryDropReminderService.class);
         getApplicationContext().startService(service);
+
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
