@@ -11,4 +11,5 @@
     <string name="on">Nyala</string>
     <string name="reminder_mode_choice">Pilih Mode Pengingat</string>
     <string name="reminder_mode_summary">Saat ini: %s</string>
+    <string name="network_connection">&#128246; Koneksi Internet: %s</string>
 </resources>

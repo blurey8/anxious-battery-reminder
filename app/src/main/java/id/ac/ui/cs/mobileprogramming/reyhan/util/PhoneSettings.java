@@ -2,6 +2,7 @@ package id.ac.ui.cs.mobileprogramming.reyhan.util;
 
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.net.ConnectivityManager;
 import android.os.Build;
 import android.os.PowerManager;
 import android.provider.Settings;
@@ -37,5 +38,11 @@ public class PhoneSettings {
         }
         // TODO: Support API < Lollipop
         return powerSaveMode;
+    }
+
+    public static boolean isNetworkConnected(Context context) {
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        return cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isConnected();
     }
 }

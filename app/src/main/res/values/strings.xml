@@ -10,6 +10,7 @@
     <string name="off">Off</string>
     <string name="reminder_mode_choice">Choose Reminder Mode</string>
     <string name="reminder_mode_summary">Current: %s</string>
+    <string name="network_connection">&#128246; Internet Connection: %s</string>
 
     <string-array name="mode_name">
         <item>Relax Mode</item>
